@@ -4,7 +4,6 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import product from './product';
 import banner from './banner';
 import model from './model';
-// import model_type from '../../public/model_type';
 import model_type from './model_type';
 
 

@@ -11,7 +11,7 @@ const ModelPage = ({ modelData }) => {
         <div className="models-container">
           {console.log(newModels)}
           {console.log(modelData)}
-            {newModels?.map((newModel) => <ModelCar key={modelData._id} newModel={newModel} />)}
+            {newModels?.map((newModel) => <ModelCar key={modelData._id} newModel={newModel}  />)}
         </div>
         <FooterBanner  />
     </div>
@@ -44,11 +44,16 @@ export const getStaticPaths = async () => {
 
 
 export const getStaticProps = async ({ params: {slug} }) => {
-  const query = `*[_type == "product" && slug.current == '${slug}']{
-    _id, 
+  const query = `*[_type == "product" && brandSlug.current == '${slug}']{
+    _id, brandSlug,
     "model": *[_type == "model" && references(^._id)]{
-      name, image, numOfProducts, slug }}`;
+      name, image, numOfProducts, slug,
+      "parentSlug": ^.brandSlug
+     }}`;
+
+
   const modelData = await client.fetch(query);
+
 
   return {
     props: { modelData }

@@ -1,15 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { urlFor } from '../lib/client';
-// import { useRouter } from 'next/router';
 
-const ModelCar = ({ newModel: {image, name, slug, numOfProducts} }) => {
-    // const router = useRouter();
+const ModelCar = ({ newModel: {image, name, slug, numOfProducts, parentSlug} }) => {
+
     return (
         <div>
-            <Link href={`/product/[slug]/[${slug.current}]`}>
-        
-            {/* <Link href="/product/[slug]" as={`/product/${slug.current}`}> */}
+            <Link href={`/product/${parentSlug.current}/${slug.current}`}>
                 <div className="main-container-model" >
                      <div className="models-container" >
                         <img className="models-card"

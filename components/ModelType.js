@@ -4,10 +4,10 @@ import { urlFor } from '../lib/client';
 
 
 
-const ModelType = ({ modelTypeData: {image, name, slug, numOfProducts} }) => {
+const ModelType = ({ newModelType: {image, name, slug, numOfProducts} }) => {
     return (
         <div>
-            <Link href={`/product/[${slug.current}]`}>
+            <Link href={`/product/[A]/[B]/${slug.current}`}>
                 <div className="main-container-model" >
                      <div className="models-container" >
                         <img className="models-card"

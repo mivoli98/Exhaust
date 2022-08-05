@@ -17,7 +17,7 @@ export default {
             type: 'string',
         },
         {
-            name: 'slug',
+            name: 'brandSlug',
             title: 'Slug',
             type: 'slug',
             option: {
