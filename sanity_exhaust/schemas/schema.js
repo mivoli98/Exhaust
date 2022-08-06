@@ -5,10 +5,11 @@ import product from './product';
 import banner from './banner';
 import model from './model';
 import model_type from './model_type';
+import exhaust_type from './exhaust_type';
 
 
 
 export default createSchema({ 
   name: 'default',
-  types: schemaTypes.concat([ product, banner, model, model_type ]),
+  types: schemaTypes.concat([ product, banner, model, model_type, exhaust_type ]),
 })

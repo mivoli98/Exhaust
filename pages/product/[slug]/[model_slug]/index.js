@@ -13,7 +13,9 @@ const ModelTypeIndex = ({ modelTypeDatas }) => {
  
         <div className="models-container">
  
-          {console.log(modelTypeDatas)}
+          {/* {console.log(modelTypeDatas)}
+          {console.log(newModelTypes)} */}
+
           
             {newModelTypes?.map((newModelType) => <ModelType key={newModelType._id} newModelType={newModelType} />)}
         </div>
@@ -26,9 +28,11 @@ const ModelTypeIndex = ({ modelTypeDatas }) => {
 
   export const getServerSideProps = async ({ params: {slug, model_slug} }) => {
     const query = `*[_type == "model" && slug.current == '${model_slug}']{
-      _id, 
+      _id, slug,
       "model_type": *[_type == "model_type" && references(^._id)]{
-        name, image, numOfProducts, slug }}`;
+        name, image, numOfProducts, slug,
+        "modelSlug": ^.slug,
+        "brandSlug": *[_type == "product" && brandSlug.current == '${slug}']{brandSlug} }}`;
  
     const modelTypeDatas = await client.fetch(query);
     
