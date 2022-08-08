@@ -9,7 +9,7 @@ const ExhaustSlug = ({ exhaustDatas }) => {
  
         <div className="models-container">
  
-          {console.log(exhaustDatas)}
+          {/* {console.log(exhaustDatas)} */}
           {console.log(newExhaustDatas)}
 
           

@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { AiOutlineShopping } from 'react-icons/ai';
-
+import Cart from './Cart';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from '../node_modules/framer-motion/dist/framer-motion';
+import { useStateContext } from '../context/StateContext';
 
-// import { Cart } from './';
-// import { useStateContext } from '../context/StateContext';
 const Navbar = () => {
-  // const { showCart, setShowCart, totalQuantities } = useStateContext();
-
-    const [toggle, setToggle] = useState(false)
+    
+  const { showCart, setShowCart, totalQuantities } = useStateContext();
+  const [toggle, setToggle] = useState(false)
   return (
     <div className="navbar-container">
       <ul className="ulNav">
@@ -22,9 +21,9 @@ const Navbar = () => {
         </li>
       </ul>
 
-        <button type="button" className="cart-icon" onClick="">
+        <button type="button" className="cart-icon" onClick={() => setShowCart(true)}>
         <AiOutlineShopping />
-        <span className="cart-item-qty">0</span>
+        <span className="cart-item-qty">{totalQuantities}</span>
       </button>
 
       
@@ -46,7 +45,7 @@ const Navbar = () => {
            
           )}
          
-
+          {showCart && <Cart />}
 
       
 
