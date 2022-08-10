@@ -13,7 +13,7 @@ const ExhaustSlug = ({ exhaustDatas }) => {
           {console.log(newExhaustDatas)}
 
           
-            {newExhaustDatas?.map((newExhaustData) => <ExhaustCard key={newExhaustData._id} newExhaustData={newExhaustData} />)}
+          {newExhaustDatas?.map((newExhaustData) => <ExhaustCard key={newExhaustData._id} newExhaustData={newExhaustData} />)}
         </div>
         <FooterBanner  />
     </div>
