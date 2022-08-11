@@ -5,6 +5,7 @@ import Cart from './Cart';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from '../node_modules/framer-motion/dist/framer-motion';
 import { useStateContext } from '../context/StateContext';
+import SideBar from './SideBar';
 
 const Navbar = () => {
     
@@ -31,35 +32,26 @@ const Navbar = () => {
             <motion.div className="motionDiv"
               // whileInView={{ x: [0, 300] }}
               transition={{ duration: 0.85, ease: 'easeOut'}}
-              >
-                <HiX className="closeNav" onClick={() => setToggle(false)} />
-                <ul className="sideBar">
+              > 
+              <HiX className="closeNav" onClick={() => setToggle(false)} />
+              <div className="sideBar">
+                
+                {/* <ul className="sideBar">
                 {['MERCEDES AMG', 'FERRARI', 'AUDI', 'MCLAREN', 'PORSCHE', 'LAMBORGHINI'].map((item) => (
                     <li className="sideBarList" key={item}>
                       <button className="sideBarText" href={`#${item}`} onClick={() => setToggle(false)}>{item}</button>
                     </li>
                 ))}
-                </ul>
+                </ul> */}
+
+                <SideBar  />
+                </div>
 
             </motion.div>
            
           )}
          
-          {showCart && <Cart />}
-
-      
-
-      {/* <button type="button" className="cart-icon" onClick={() => setShowCart(true)}>
-        <AiOutlineShopping />
-        <span className="cart-item-qty">{totalQuantities}</span>
-      </button> */}
-
-      {/* {showCart && <Cart />} */}
-
-
-
-      {/* drop-down menu */}
-      
+          {showCart && <Cart />}     
     </div>
   )
 }

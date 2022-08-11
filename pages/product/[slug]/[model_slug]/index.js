@@ -54,15 +54,6 @@ const ModelTypeIndex = ({ newModelTypes, newProductDetailDatas }) => {
 
     const newModelTypes = modelTypeDatas.map(item => item.model_type).flat();
     const newProductDetailDatas = productDetailDatas.map(item => item.exhaust_type).flat();
-      
-    // if (newModelTypes.length === 0) {
-    //   return {
-    //     redirect: {
-    //       permanent: false,
-    //       destination: `/product/${slug}/${model_slug}/:exhaust_slug`
-    //     },
-    //   };
-    // }
 
     return {
       props: { newModelTypes, newProductDetailDatas }

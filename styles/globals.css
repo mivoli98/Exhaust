@@ -134,7 +134,24 @@ li button:hover {
 
 .sideBarList {
     margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    list-style: none;
+    height: 60px;
+    text-decoration: none;
+    font-size: 18px;
+    width: 200%;
 }
+
+/* .sideBarList a {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: inherit;
+} */
+
 
 .sideBarText {
     color: white;
@@ -145,8 +162,29 @@ li button:hover {
     
 }
 
-.sideBarList .sideBarText:hover {
-    transform: scale(1.1, 1.1);
+.sideBarList:hover {
+    /* transform: scale(1.1, 1.1); */
+    background-color: #252831;
+    border-left: 4px solid #EEEEEE;
+    cursor: pointer;
+}
+
+.sideBarSubList {
+    /* background: #414757; */
+    height: 60px;
+    padding-left: 3rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 18px;
+}
+
+.sideBarSubList:hover {
+    /* transform: scale(1.1, 1.1); */
+    background-color: #252831;
+    border-left: 4px solid #EEEEEE;
+    cursor: pointer;
 }
 
 
@@ -971,12 +1009,26 @@ span.text-red {
         width: 300px;
         margin: auto;
     }
+    .slide {
+        width: 100%;
+        height: unset !important;
+        position: absolute;
+        opacity: 0;
+        transition: opacity ease-in-out 0.4s;
+      }
 }
 
 @media screen and (min-width: 481px) and (max-width:1024px) {
     .products-heading {
         margin-top: -35vh !important;
     }
+    .slide {
+        width: 100%;
+        height: unset !important;
+        position: absolute;
+        opacity: 0;
+        transition: opacity ease-in-out 0.4s;
+      }
 }
 
 
@@ -1039,3 +1091,87 @@ span.text-red {
     text-align: center;
     margin-top: revert;
 }
+
+
+
+
+/**********************SLIDER*******************************************************/
+
+.container-slider {
+    max-width: 700px;
+    height: 500px;
+    margin: 100px auto 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  @media screen and (max-width: 700px){
+    .container-slider {
+      margin: 100px 10px 0;
+    }
+  }
+  .slide {
+    width: 100%;
+    height: 120%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity ease-in-out 0.4s;
+  }
+  .slide img {
+    width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+  }
+  .active-anim {
+    opacity: 1;
+    transition: opacity ease-in-out 0.4s;
+  }
+  
+  .btn-slide {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #f1f1f1;
+    border: 1px solid rgba(34, 34, 34, 0.287);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .btn-slide img {
+    width: 25px;
+    height: 25px;
+    pointer-events: none;
+  }
+  .prev {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-60%);
+  }
+  .next {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-60%);
+  }
+  
+  
+  .container-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  .dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #f1f1f1;
+    margin: 0 5px;
+    background: #f1f1f1;
+  }
+  .dot.active {
+    background: rgb(32, 32, 32);
+  }
