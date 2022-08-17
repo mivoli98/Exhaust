@@ -1,19 +1,18 @@
 import React from 'react'
 import { client, urlFor } from '../../../lib/client';
-import { FooterBanner, ModelCar } from '../../../components';
+import {  ModelCar } from '../../../components';
 
 
 const ModelPage = ({ modelData }) => {
   const newModels = modelData.map(item => item.model).flat();
     
   return (
-    <div>
+    <div className="main-container">
         <div className="models-container">
           {console.log(newModels)}
           {console.log(modelData)}
             {newModels?.map((newModel) => <ModelCar key={modelData._id} newModel={newModel}  />)}
         </div>
-        <FooterBanner  />
     </div>
   )
 }

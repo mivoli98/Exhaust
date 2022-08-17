@@ -1,33 +1,20 @@
 import React from 'react';
 import { client, urlFor } from "../../../../lib/client";
-import { FooterBanner, ModelType, ExhaustCard } from '../../../../components';
+import { ModelType, ExhaustCard } from '../../../../components';
 
 
 
 const ModelTypeIndex = ({ newModelTypes, newProductDetailDatas }) => {
-  // const newModelTypes = modelTypeDatas.map(item => item.model_type).flat();
-
-
   return (
-    <div>
- 
+    <div className="main-container">
         <div className="models-container">
- 
-          {/* {console.log(modelTypeDatas)} */}
-          {console.log(newModelTypes)}
-          {console.log(newProductDetailDatas)}
-
             {newModelTypes.length == 0? (
               newProductDetailDatas.map((newExhaustData) => <ExhaustCard key={newExhaustData._id} newExhaustData={newExhaustData} />)
             ) : (
               newModelTypes.map((newModelType) => <ModelType key={newModelType._id} newModelType={newModelType} />)
             )}
-
-            {/* {newModelTypes?.map((newModelType) => <ModelType key={newModelType._id} newModelType={newModelType} />)} */}
         </div>
-        <FooterBanner  />
-    </div>
-    
+    </div>   
   )
 }
 

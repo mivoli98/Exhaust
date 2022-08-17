@@ -1,35 +1,31 @@
 import React, {useState} from 'react';
-import Link from 'next/link';
-// import { IoMdHeartEmpty } from 'react-icons/io';
+import { BsChevronDown } from 'react-icons/bs'
 
 const SubMenu = ({ item }) => {
-    const [subNav, setSubNav] = useState(false);
-    const showSubNav = () => setSubNav(!subNav);
-  return (
-    <>
-    <div className="sideBarList" onClick={item.subNav && showSubNav}>
-        <Link href={item.path}>
-            <a>
-                <div className="sideBarText">
-                    {item.title}
+    const [open, setOpen] = useState(false);
+    if(item.subNav) {
+        return (
+            <div className={open ? "sidebar-item open" : "sidebar-item"}>
+                <div className="sidebar-title">
+                    <span>
+                        <a href={item.path}>{item.title}</a>
+                    </span>
+                    <BsChevronDown className="toggleBtn" onClick={() => setOpen(!open)}/>
                 </div>
-            </a>
-        </Link>
-        <div>
-            {item.subNav && subNav ? item.iconOpened : item.subNav ? item.iconClosed : null}
-        </div>
-    </div>
-    
-    {subNav && item.subNav.map ((item, index) => (
-            // <Link to='#' key={index} >
-                <div className="sideBarSubList" > 
-                {item.title}
+                <div className="sidebar-content">
+                    { item.subNav.map((firstMenu, index) => <SubMenu key={index} item={firstMenu} />)}
+                    </div>
             </div>
-            // </Link>
-        ))}
-  
-    </>
-  )
+          )
+    } else {
+        return (
+            <a href={item.path} className="sidebar-item plain">
+                <div className="sidebar-title">{item.title}</div>     
+            </a>
+        )
+    }
 }
 
 export default SubMenu
+
+   

@@ -7,16 +7,15 @@ const Home = ({ products, bannerDatas }) => {
   return (
     <div>
      {bannerDatas?.map((bannerData) => <HeroBanner key={bannerData._id} heroBanner={bannerData} /> )} 
-     {console.log(bannerDatas)}
-    <div className="products-heading">
-      <h2>Shop By Brand</h2>
-    </div>
+     <div className="main-container">
+      <div className="products-heading">
+        <h2>Shop By Brand</h2>
+      </div>
 
-    <div className="products-container">
-      {products?.map((product) => <Product key={product._id} product={product} />)}
-    </div>
-
-    <FooterBanner />
+      <div className="products-container">
+        {products?.map((product) => <Product key={product._id} product={product} />)}
+      </div>
+      </div> 
     </div>
   )  
 }

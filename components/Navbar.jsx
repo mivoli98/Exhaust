@@ -30,27 +30,15 @@ const Navbar = () => {
       
           {toggle && (          
             <motion.div className="motionDiv"
-              // whileInView={{ x: [0, 300] }}
+              // whileInView={{ x: [300, 0] }}
               transition={{ duration: 0.85, ease: 'easeOut'}}
               > 
               <HiX className="closeNav" onClick={() => setToggle(false)} />
-              <div className="sideBar">
-                
-                {/* <ul className="sideBar">
-                {['MERCEDES AMG', 'FERRARI', 'AUDI', 'MCLAREN', 'PORSCHE', 'LAMBORGHINI'].map((item) => (
-                    <li className="sideBarList" key={item}>
-                      <button className="sideBarText" href={`#${item}`} onClick={() => setToggle(false)}>{item}</button>
-                    </li>
-                ))}
-                </ul> */}
-
                 <SideBar  />
-                </div>
 
-            </motion.div>
-           
+            </motion.div>      
           )}
-         
+       
           {showCart && <Cart />}     
     </div>
   )

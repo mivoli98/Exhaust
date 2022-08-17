@@ -1,21 +1,14 @@
 import React from 'react'
 import { client, urlFor } from "../../../../../lib/client";
-import { FooterBanner, ExhaustCard } from '../../../../../components';
+import { ExhaustCard } from '../../../../../components';
 
 const ExhaustSlug = ({ exhaustDatas }) => {
     const newExhaustDatas = exhaustDatas.map(item => item.exhaust_type).flat();
   return (
-    <div>
- 
+    <div className="main-container">
         <div className="models-container">
- 
-          {/* {console.log(exhaustDatas)} */}
-          {console.log(newExhaustDatas)}
-
-          
           {newExhaustDatas?.map((newExhaustData) => <ExhaustCard key={newExhaustData._id} newExhaustData={newExhaustData} />)}
         </div>
-        <FooterBanner  />
     </div>
   )
 }

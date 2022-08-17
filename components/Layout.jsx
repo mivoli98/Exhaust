@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import FooterBanner from './FooterBanner';
 
 const Layout = ({ children }) => {
   return (
@@ -12,9 +13,10 @@ const Layout = ({ children }) => {
       <header>
         <Navbar />
       </header>
-      <main className="main-container">
+      <main>
         {children}
       </main>
+        <FooterBanner />
       <footer>
         <Footer />
       </footer>

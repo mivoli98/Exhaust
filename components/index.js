@@ -11,4 +11,5 @@ export { default as ExhaustCard } from './ExhaustCard';
 export { default as BtnSlider } from './BtnSlider';
 export { default as SideBar } from './SideBar';
 export { default as SubMenu } from './SubMenu';
+export { default as SecondSubMenu } from './SecondSubMenu';
 // export { default as SidebarData } from './SidebarData';

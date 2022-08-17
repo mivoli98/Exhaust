@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { client, urlFor } from "../../../../../../lib/client";
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-import { FooterBanner, ExhaustCard } from '../../../../../../components';
+import { ExhaustCard } from '../../../../../../components';
 import { useStateContext } from '../../../../../../context/StateContext';
 
 const ShowExhaust = ({ exhaustDetails, exhaustAll, noModelTypeAll }) => {
@@ -15,7 +15,7 @@ const ShowExhaust = ({ exhaustDetails, exhaustAll, noModelTypeAll }) => {
     const { decQty, incQty, qty, onAdd } = useStateContext();
 
   return (
-    <div>        
+    <div className="main-container">        
         <div className="product-detail-container">
             <div>
                 <div className= "image-container">
@@ -72,7 +72,6 @@ const ShowExhaust = ({ exhaustDetails, exhaustAll, noModelTypeAll }) => {
             </div>
           </div>
         </div>
-        <FooterBanner  />
     </div>
   )
 }
