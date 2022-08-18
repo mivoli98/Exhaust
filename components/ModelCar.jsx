@@ -11,8 +11,8 @@ const ModelCar = ({ newModel: {image, name, slug, numOfProducts, parentSlug} }) 
                      <div className="models-container" >
                         <img className="models-card"
                             src={urlFor(image)}
-                            width={350}
-                            height={350}
+                            width={250}
+                            height={250}
                             // className="product-image" 
                             // onMouseEnter={() => setIndex(i)}
                         />       

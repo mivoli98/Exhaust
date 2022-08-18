@@ -10,14 +10,16 @@ const ExhaustCard = ({ newExhaustData: {name, image, slug, price, exhaustSlug, b
                      <div className="models-container" >
                         <img className="models-card"
                             src={urlFor(image && image[0])}
-                            width={350}
-                            height={350}
+                            width={250}
+                            height={250}
                             // className="product-image" 
                             // onMouseEnter={() => setIndex(i)}
                         />       
                     </div>
-                    <p className="product-name">{name}</p> 
-                    <p className="product-price">${price}</p>             
+                    <div className="exhaust-card-bottom-detail">
+                        <h3 className="exhaust-name">{name}</h3> 
+                        <p className="exhaust-price">${price}</p>  
+                    </div>             
                 </div>
             </Link>
         </div>

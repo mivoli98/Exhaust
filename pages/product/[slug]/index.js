@@ -1,18 +1,21 @@
 import React from 'react'
 import { client, urlFor } from '../../../lib/client';
-import {  ModelCar } from '../../../components';
+import {  ModelCar, HeaderBanner } from '../../../components';
 
 
 const ModelPage = ({ modelData }) => {
   const newModels = modelData.map(item => item.model).flat();
     
   return (
+    <div>
+      <div>
+      {modelData?.map((modelDatasingle) => <HeaderBanner key={modelDatasingle._id} headerBanner={modelDatasingle} /> )}  
+      </div>
     <div className="main-container">
         <div className="models-container">
-          {console.log(newModels)}
-          {console.log(modelData)}
             {newModels?.map((newModel) => <ModelCar key={modelData._id} newModel={newModel}  />)}
         </div>
+    </div>
     </div>
   )
 }
@@ -44,7 +47,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: {slug} }) => {
   const query = `*[_type == "product" && brandSlug.current == '${slug}']{
-    _id, brandSlug,
+    _id, brandSlug, name,
     "model": *[_type == "model" && references(^._id)]{
       name, image, numOfProducts, slug,
       "parentSlug": ^.brandSlug

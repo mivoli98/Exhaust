@@ -1,4 +1,6 @@
 import React from 'react'
+import { FiMapPin, FiPhoneCall } from 'react-icons/fi';
+import { AiOutlineMail } from 'react-icons/ai';
 // import Link from 'next/link';
 
 
@@ -7,27 +9,22 @@ const FooterBanner = () => {
     <div className="footer-banner-container">
       <div className="banner-desc">
         <div className="left">
-          <h2>About Us</h2>
-          <p>Capristo has pioneered a variety of improvements in the design of performance exhaust systems and carbon fiber accessories.</p>
-          <p>100 Sharpstown Center, suite #1168, Houston, Texas 77036</p>
-          {/* <h3>{largeText1}</h3>
-          <h3>{largeText2}</h3>
-          <p>{saleTime}</p> */}
+        <h2>WE Exhaust</h2>
         </div>
 
         <div className="right">
-          <h2>Contact Us</h2>
-          <p>Instagram: @aaaaa</p>
-          <p>Phone Numbers: 333-333-333</p>
-          <p>Email: aaaa@gmail.com</p>
-
-          {/* <p>{smallText}</p>
-          <h3>{midText}</h3>
-          <p>{desc}</p>
-          <Link href={`/product/${product}`}>
-            <button type="button">{buttonText}</button>
-          </Link> */}
-      
+          <div className="right-top">
+            <h2>About Us</h2>
+            <p>Capristo has pioneered a variety of improvements in the design </p>
+            <p>of performance exhaust systems and carbon fiber accessories.</p>
+            <p>of performance exhaust systems and carbon fiber accessories.</p>
+            <p>of performance exhaust systems and carbon fiber accessories.</p>
+          </div>
+          <div className="right-bottom"> 
+            <p><i> <FiMapPin /></i>Houston, USA</p>
+            <p><i><FiPhoneCall /></i>+ 1 (346) 529 5555</p> 
+            <p><i> <AiOutlineMail /></i>Example@gmail.com</p>
+          </div>
         </div>
 
       </div>

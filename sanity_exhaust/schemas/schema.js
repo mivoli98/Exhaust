@@ -9,7 +9,8 @@ import exhaust_type from './exhaust_type';
 
 
 
+
 export default createSchema({ 
   name: 'default',
-  types: schemaTypes.concat([ product, banner, model, model_type, exhaust_type ]),
+  types: schemaTypes.concat([ product, banner, model, model_type, exhaust_type]),
 })

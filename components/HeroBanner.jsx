@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
-// import Link from 'next/link';
 import BtnSlider from './BtnSlider';
 import { urlFor } from '../lib/client';
 
 const HeroBanner = ({ heroBanner }) => {
-  const { image } = heroBanner;
+  const { image, buttonText, name } = heroBanner;
   const [slideIndex, setSlideIndex] = useState(1);
 
   const nextSlide = () => {
@@ -33,6 +32,12 @@ const HeroBanner = ({ heroBanner }) => {
           />
         </div>
       ))}
+        <div className="buttonText">
+          <h1>{name}</h1>
+          <a href="/">
+          <button type="button" className="button-banner">{buttonText}</button>
+          </a>
+        </div>
 
         <BtnSlider moveSlide={nextSlide} direction={"next"} />
         <BtnSlider moveSlide={prevSlide} direction={"prev"} />

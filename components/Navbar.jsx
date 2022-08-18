@@ -15,7 +15,7 @@ const Navbar = () => {
     <div className="navbar-container">
       <ul className="ulNav">
         <li className="logo">
-          <Link href="/">DOM Exhaust</Link>
+          <Link href="/">WE Exhaust</Link>
         </li> 
         <li>
           <button className="app__navbar-menu" onClick={() => setToggle(true)}>Shop</button>

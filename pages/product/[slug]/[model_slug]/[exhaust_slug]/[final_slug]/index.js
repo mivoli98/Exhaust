@@ -13,66 +13,100 @@ const ShowExhaust = ({ exhaustDetails, exhaustAll, noModelTypeAll }) => {
 
     const [index, setIndex ] = useState(0)
     const { decQty, incQty, qty, onAdd } = useStateContext();
+    
 
   return (
-    <div className="main-container">        
-        <div className="product-detail-container">
-            <div>
-                <div className= "image-container">
-                    <img 
-                    className="product-detail-image"
-                    src={urlFor(image && image[index])} />
-                </div>
-                <div className="small-images-container">
-                  {image?.map((item, i) => (
-                    <img 
-                      src={urlFor(item)}
-                      className={i === index ? 'small-image selected-image' : 'small-image'}
-                      onMouseEnter={() => setIndex(i)}
-                    />
-                  ))}
 
-                </div>
-            </div>
-            <div className="product-detail-desc">
-              <h1>{name}</h1>
-              <h4>Description: </h4>
-              <p>{description}</p>
-              <p className="price">${price}</p>
-              <div className="quantity">
-                <h3>Quantity:</h3>
-                <p className="quantity-desc">
-                  <span className="minus" onClick={decQty}><AiOutlineMinus /></span>
-                  <span className="num">{qty}</span>
-                  <span className="plus" onClick={incQty}><AiOutlinePlus /></span>
-                </p>
-
-              </div>
-              <div className="buttons">
-                <button type="button" className="add-to-cart" onClick={() => onAdd(exhaustDetails, qty)}>Add to Cart</button>
-                <button type="button" className="buy-now" onClick="">Buy Now</button>
-              </div>
-            </div>
-        </div>
-
-        <div className="maylike-products-wrapper">
-          <h2>You may also like</h2>
-          <div className="marquee">
-            <div className="maylike-products-container track">  
-                  {newExhaustAll.map((item) => (
-                    <ExhaustCard key={item._id}
-                    newExhaustData={item} />
-                ))}
-                
-                { exhaustAll.modelSlug === exhaustAll.exhaustSlug && (
-                  newNoModelTypeAll.map((item) => (
-                    <ExhaustCard key={item._id}
-                    newExhaustData={item} />
-                  )))}
-            </div>
+    <div>
+         <div className="empty-div-banner">
           </div>
-        </div>
+
+      <div className="main-container">        
+              <div className="product-detail-container">
+                  <div>
+                      <div className= "image-container">
+                          <img 
+                          className="product-detail-image"
+                          src={urlFor(image && image[index])} />
+                      </div>
+                      <div className="small-images-container">
+                        {image?.map((item, i) => (
+                          <img 
+                            src={urlFor(item)}
+                            className={i === index ? 'small-image selected-image' : 'small-image'}
+                            onMouseEnter={() => setIndex(i)}
+
+                          />
+                        ))}
+
+                      </div>
+                  </div>
+                  <div className="product-detail-desc">
+                    <h1>{name}</h1>
+                    <p className="dash">______________________</p>
+
+                    <div className="shipping_weight">
+                      <table className="table">
+                        <tr>
+                            <th>Shipping Weight </th>
+                            <td>{shipping_weight}</td>
+                        </tr>
+                        <tr>
+                            <th>Shipping Dimensions </th>
+                            <td>{shipping_dimensions}</td>
+                        </tr>
+                        <tr>
+                            <th>Size </th>
+                            <td>{size}</td>
+                        </tr>
+                    </table>
+                    </div>
+                    
+                    <p className="availability">{availability}</p>
+                    <p className="price">${price}</p>
+                    <div className="quantity">
+                      <h3>Quantity:</h3>
+                      <p className="quantity-desc">
+                        <span className="minus" onClick={decQty}><AiOutlineMinus /></span>
+                        <span className="num">{qty}</span>
+                        <span className="plus" onClick={incQty}><AiOutlinePlus /></span>
+                      </p>
+
+                    </div>
+                    <div className="buttons">
+                      <button type="button" className="add-to-cart" onClick={() => onAdd(exhaustDetails, qty)}>Add to Cart</button>
+                      <button type="button" className="buy-now" onClick="">Buy Now</button>
+                    </div>
+                  </div>
+              </div>
+
+              <div className="exhaust-description">
+                <h2>Description </h2>
+                  <p>{description}</p>
+              </div>
+
+              <div className="maylike-products-wrapper">
+                <h2>You may also like</h2>
+                <div className="marquee">
+                  <div className="maylike-products-container track">  
+                        {newExhaustAll.map((item) => (
+                          <ExhaustCard key={item._id}
+                          newExhaustData={item} />
+                      ))}
+                      
+                      { exhaustAll.modelSlug === exhaustAll.exhaustSlug && (
+                        newNoModelTypeAll.map((item) => (
+                          <ExhaustCard key={item._id}
+                          newExhaustData={item} />
+                        )))}
+                  </div>
+                </div>
+              </div>
+          </div>
+
+
     </div>
+    
   )
 }
 

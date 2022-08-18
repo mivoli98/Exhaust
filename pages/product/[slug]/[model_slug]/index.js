@@ -1,12 +1,17 @@
 import React from 'react';
 import { client, urlFor } from "../../../../lib/client";
-import { ModelType, ExhaustCard } from '../../../../components';
+import { ModelType, ExhaustCard, HeaderBanner } from '../../../../components';
 
 
 
-const ModelTypeIndex = ({ newModelTypes, newProductDetailDatas }) => {
+const ModelTypeIndex = ({ newModelTypes, newProductDetailDatas, modelTypeDatas }) => {
+  console.log('newModelTypes', modelTypeDatas)
   return (
-    <div className="main-container">
+    <div>
+      <div>
+        {modelTypeDatas?.map((modelTypeData) => <HeaderBanner key={modelTypeData._id} headerBanner={modelTypeData} /> )}  
+      </div>
+      <div className="main-container">
         <div className="models-container">
             {newModelTypes.length == 0? (
               newProductDetailDatas.map((newExhaustData) => <ExhaustCard key={newExhaustData._id} newExhaustData={newExhaustData} />)
@@ -14,21 +19,22 @@ const ModelTypeIndex = ({ newModelTypes, newProductDetailDatas }) => {
               newModelTypes.map((newModelType) => <ModelType key={newModelType._id} newModelType={newModelType} />)
             )}
         </div>
-    </div>   
+    </div>  
+  </div> 
   )
 }
 
 
   export const getServerSideProps = async ({ params: {slug, model_slug} }) => {
     const query = `*[_type == "model" && slug.current == '${model_slug}']{
-      _id, slug,
+      _id, slug, name,
       "model_type": *[_type == "model_type" && references(^._id)]{
         name, image, numOfProducts, slug,
         "modelSlug": ^.slug,
         "brandSlug": *[_type == "product" && brandSlug.current == '${slug}']{brandSlug} }}`;
 
       const productDetailQuery = `*[_type == "model" && slug.current == '${model_slug}']{
-        _id, slug,
+        _id, slug, name,
         "exhaust_type" : *[_type == "exhaust_type" && references(^._id)]{
           name, image, slug, price, description, availability, shipping_weight, shipping_dimensions, size,
           "exhaustSlug": ^.slug,
@@ -43,7 +49,7 @@ const ModelTypeIndex = ({ newModelTypes, newProductDetailDatas }) => {
     const newProductDetailDatas = productDetailDatas.map(item => item.exhaust_type).flat();
 
     return {
-      props: { newModelTypes, newProductDetailDatas }
+      props: { newModelTypes, newProductDetailDatas, modelTypeDatas }
     }
   }
 
