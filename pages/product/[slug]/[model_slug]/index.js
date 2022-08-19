@@ -1,14 +1,15 @@
 import React from 'react';
 import { client, urlFor } from "../../../../lib/client";
-import { ModelType, ExhaustCard, HeaderBanner } from '../../../../components';
+import { ModelType, ExhaustCard, HeaderBanner, Navbar } from '../../../../components';
 
 
 
-const ModelTypeIndex = ({ newModelTypes, newProductDetailDatas, modelTypeDatas }) => {
+const ModelTypeIndex = ({ newModelTypes, newProductDetailDatas, modelTypeDatas, searchQueryDatas }) => {
   console.log('newModelTypes', modelTypeDatas)
   return (
     <div>
       <div>
+        <Navbar searchExhaust={searchQueryDatas} />
         {modelTypeDatas?.map((modelTypeData) => <HeaderBanner key={modelTypeData._id} headerBanner={modelTypeData} /> )}  
       </div>
       <div className="main-container">
@@ -45,11 +46,14 @@ const ModelTypeIndex = ({ newModelTypes, newProductDetailDatas, modelTypeDatas }
     const modelTypeDatas = await client.fetch(query);
     const productDetailDatas = await client.fetch(productDetailQuery);
 
+    const searchQuery = '*[_type == "exhaust_type"]';
+    const searchQueryDatas = await client.fetch(searchQuery);
+
     const newModelTypes = modelTypeDatas.map(item => item.model_type).flat();
     const newProductDetailDatas = productDetailDatas.map(item => item.exhaust_type).flat();
 
     return {
-      props: { newModelTypes, newProductDetailDatas, modelTypeDatas }
+      props: { newModelTypes, newProductDetailDatas, modelTypeDatas, searchQueryDatas }
     }
   }
 

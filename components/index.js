@@ -13,4 +13,6 @@ export { default as SideBar } from './SideBar';
 export { default as SubMenu } from './SubMenu';
 export { default as SecondSubMenu } from './SecondSubMenu';
 export { default as HeaderBanner } from './HeaderBanner';
+export { default as SearchBar } from './SearchBar';
+export { default as SearchDetail } from './SearchDetail';
 // export { default as SidebarData } from './SidebarData';

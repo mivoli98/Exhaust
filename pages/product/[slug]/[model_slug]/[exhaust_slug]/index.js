@@ -1,13 +1,14 @@
 import React from 'react'
 import { client, urlFor } from "../../../../../lib/client";
-import { ExhaustCard, HeaderBanner } from '../../../../../components';
+import { ExhaustCard, HeaderBanner, Navbar } from '../../../../../components';
 
-const ExhaustSlug = ({ exhaustDatas }) => {
+const ExhaustSlug = ({ exhaustDatas, searchQueryDatas }) => {
     const newExhaustDatas = exhaustDatas.map(item => item.exhaust_type).flat();
     console.log('exhaustDatas', exhaustDatas )
   return (
     <div>
         <div>
+          <Navbar searchExhaust={searchQueryDatas} />
           {exhaustDatas?.map((exhaustData) => <HeaderBanner key={exhaustData._id} headerBanner={exhaustData} /> )}  
         </div>
       <div className="main-container">
@@ -30,12 +31,14 @@ export const getServerSideProps = async ({ params: {slug, model_slug, exhaust_sl
         "modelSlug": *[_type == "model" && slug.current == '${model_slug}']{slug} 
     }}`;
 
+    const searchQuery = '*[_type == "exhaust_type"]';
+    const searchQueryDatas = await client.fetch(searchQuery)
 
     const exhaustDatas = await client.fetch(query);
     
 
     return {
-      props: { exhaustDatas }
+      props: { exhaustDatas, searchQueryDatas }
     }
   }
 

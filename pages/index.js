@@ -1,11 +1,11 @@
 import React from 'react'
-import Head from 'next/head';
-import { Product, HeroBanner, FooterBanner, Navbar } from '../components';
+import { Product, HeroBanner, Navbar } from '../components';
 import { client } from '../lib/client';
 
-const Home = ({ products, bannerDatas }) => {
+const Home = ({ products, bannerDatas, searchQueryDatas }) => {
   return (
     <div>
+      <Navbar searchExhaust={searchQueryDatas} />
      {bannerDatas?.map((bannerData) => <HeroBanner key={bannerData._id} heroBanner={bannerData} /> )} 
      <div className="main-container">
       <div className="products-heading">
@@ -28,8 +28,11 @@ export const getServerSideProps = async () => {
   const bannerQuery = '*[_type == "banner"]';
   const bannerDatas = await client.fetch(bannerQuery);
 
+  const searchQuery = '*[_type == "exhaust_type"]';
+  const searchQueryDatas = await client.fetch(searchQuery);
+
   return {
-    props: { products, bannerDatas }
+    props: { products, bannerDatas, searchQueryDatas }
   }
 }
 

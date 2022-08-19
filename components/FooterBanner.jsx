@@ -1,7 +1,8 @@
 import React from 'react'
 import { FiMapPin, FiPhoneCall } from 'react-icons/fi';
 import { AiOutlineMail } from 'react-icons/ai';
-// import Link from 'next/link';
+import logo from '../assets/logo.jpg';
+import Image from 'next/image'
 
 
 const FooterBanner = () => {
@@ -9,7 +10,11 @@ const FooterBanner = () => {
     <div className="footer-banner-container">
       <div className="banner-desc">
         <div className="left">
-        <h2>WE Exhaust</h2>
+        <Image 
+            src={logo}
+            width={200} 
+            height={200} 
+            alt="logo" />
         </div>
 
         <div className="right">

@@ -26,6 +26,11 @@ export default {
             }
         },
         {
+            name: 'path',
+            title: 'Path',
+            type: 'string',
+        },
+        {
             name: 'price',
             title: 'Price',
             type: 'number',

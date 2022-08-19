@@ -39,7 +39,7 @@ const Cart = () => {
                   <div className="item-desc">
                     <div className="flex-top">
                       <h5 className="checkout-title">{item.name}</h5>
-                      <h4>${item.price}</h4>
+                      <h4>${item.price}.00</h4>
                     </div>
 
                     <div className="flex bottom">
@@ -63,10 +63,21 @@ const Cart = () => {
         </div>
 
         {cartItems.length >= 1 && (
-          <div className="cart-bottom">
+          <div className="cart-bottom"> 
+            <h3 className="order-summary">Order Summary</h3>
+            <div className="shippingRate">
+              <p>Shipping </p>
+              <p>Calculated at Checkout</p> 
+
+            </div>
+            <div className="shippingRate">
+              <p>Sales tax </p>
+              <p>Calculated at Checkout</p> 
+            </div>
+
             <div className="total">
-              <h3>Subtotal: </h3>
-              <h3>${totalPrice}</h3> 
+              <h3>Subtotal </h3>
+              <h3>${totalPrice}.00</h3> 
             </div>
             <div className="btn-container">
               <button type="button" className="btn" onClick="">

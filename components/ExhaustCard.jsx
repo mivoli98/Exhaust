@@ -18,7 +18,7 @@ const ExhaustCard = ({ newExhaustData: {name, image, slug, price, exhaustSlug, b
                     </div>
                     <div className="exhaust-card-bottom-detail">
                         <h3 className="exhaust-name">{name}</h3> 
-                        <p className="exhaust-price">${price}</p>  
+                        <p className="exhaust-price">${price}.00</p>  
                     </div>             
                 </div>
             </Link>

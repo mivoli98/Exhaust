@@ -1,14 +1,15 @@
 import React from 'react'
 import { client, urlFor } from '../../../lib/client';
-import {  ModelCar, HeaderBanner } from '../../../components';
+import {  ModelCar, HeaderBanner, Navbar } from '../../../components';
 
 
-const ModelPage = ({ modelData }) => {
+const ModelPage = ({ modelData, searchQueryDatas }) => {
   const newModels = modelData.map(item => item.model).flat();
     
   return (
     <div>
       <div>
+      <Navbar searchExhaust={searchQueryDatas} />
       {modelData?.map((modelDatasingle) => <HeaderBanner key={modelDatasingle._id} headerBanner={modelDatasingle} /> )}  
       </div>
     <div className="main-container">
@@ -56,9 +57,12 @@ export const getStaticProps = async ({ params: {slug} }) => {
 
   const modelData = await client.fetch(query);
 
+  const searchQuery = '*[_type == "exhaust_type"]';
+  const searchQueryDatas = await client.fetch(searchQuery);
+
 
   return {
-    props: { modelData }
+    props: { modelData, searchQueryDatas }
   }
 }
 

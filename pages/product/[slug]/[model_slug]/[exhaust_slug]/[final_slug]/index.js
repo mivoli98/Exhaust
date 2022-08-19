@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { client, urlFor } from "../../../../../../lib/client";
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-import { ExhaustCard } from '../../../../../../components';
+import { ExhaustCard, Navbar } from '../../../../../../components';
 import { useStateContext } from '../../../../../../context/StateContext';
 
-const ShowExhaust = ({ exhaustDetails, exhaustAll, noModelTypeAll }) => {
+const ShowExhaust = ({ exhaustDetails, exhaustAll, noModelTypeAll, searchQueryDatas }) => {
 
     const newExhaustAll = exhaustAll.map(item => item.exhaust_type).flat();
     const newNoModelTypeAll = noModelTypeAll.map(item => item.exhaust_type).flat();
@@ -18,6 +18,7 @@ const ShowExhaust = ({ exhaustDetails, exhaustAll, noModelTypeAll }) => {
   return (
 
     <div>
+        <Navbar searchExhaust={searchQueryDatas} />
          <div className="empty-div-banner">
           </div>
 
@@ -43,6 +44,7 @@ const ShowExhaust = ({ exhaustDetails, exhaustAll, noModelTypeAll }) => {
                   </div>
                   <div className="product-detail-desc">
                     <h1>{name}</h1>
+                    <p className="price">${price}.00</p>
                     <p className="dash">______________________</p>
 
                     <div className="shipping_weight">
@@ -63,7 +65,6 @@ const ShowExhaust = ({ exhaustDetails, exhaustAll, noModelTypeAll }) => {
                     </div>
                     
                     <p className="availability">{availability}</p>
-                    <p className="price">${price}</p>
                     <div className="quantity">
                       <h3>Quantity:</h3>
                       <p className="quantity-desc">
@@ -135,10 +136,14 @@ export const getServerSideProps = async ({ params: {slug, model_slug, exhaust_sl
     const exhaustAll = await client.fetch(exhaust_products);
 
     const noModelTypeAll = await client.fetch(noModelTypeQuery);
+
+
+    const searchQuery = '*[_type == "exhaust_type"]';
+    const searchQueryDatas = await client.fetch(searchQuery)
     
 
     return {
-      props: { exhaustDetails, exhaustAll, noModelTypeAll }
+      props: { exhaustDetails, exhaustAll, noModelTypeAll, searchQueryDatas }
     }
   }
 
