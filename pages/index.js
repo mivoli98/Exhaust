@@ -9,7 +9,7 @@ const Home = ({ products, bannerDatas, searchQueryDatas }) => {
      {bannerDatas?.map((bannerData) => <HeroBanner key={bannerData._id} heroBanner={bannerData} /> )} 
      <div className="main-container">
       <div className="products-heading">
-        <h2>Shop By Brand</h2>
+        <h2>Shop By Brands</h2>
       </div>
 
       <div className="products-container">

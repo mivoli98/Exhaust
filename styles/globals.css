@@ -3,7 +3,7 @@ body,
 * {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
@@ -27,18 +27,19 @@ a {
 }
 
 
+
 /**************************NAVIGATION-BAR**************************************** */
 
 .navbar-container {
     width: 100%;
     height: 5rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     position: fixed;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.25);
     
     backdrop-filter: blur(4px);
     -webkit-backface-visibility: blur(4px);
@@ -59,22 +60,19 @@ a {
 }
 
 .Shop-btn {
-    color: white;
+    color: #393E46;
     font-weight: 600;
     font-size: 24px;
     border: none;
     background: none;
     cursor: pointer;
-    transition: transform .4s ease;
-}
-
-.Shop-btn span {
-    margin: 0 1rem;
-    font-weight: 400;
+    padding: 8px 15px;
 }
 
 .Shop-btn:hover {
-    transform: scale(1.1, 1.1);
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 5 10px rgba(0,0,0,0.1);
 }
 
 .buttonText {
@@ -84,30 +82,30 @@ a {
     top: 12rem;
     margin-left: 10rem;
     padding: 1rem 2rem;
-    width: 30%;
-    /* border-radius: 5px; */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    border-radius: 20px;
+   
+
 }
 
 .buttonText h1 {
     font-weight: 700;
-    font-size: 45px;
+    font-size: 40px;
     margin-bottom: 20px;
-    font-family: Satoshi Black;
     color: #393E46;
 }
 
 .button-banner {
     color: #ffffff;
     background: #393E46;
-    display: inline-block;
-    padding: 0.75rem 2rem;
+    display: flex;
+    padding: 0.5rem 2rem;
     transition: all .35s ease-in-out;
     /* position: relative; */
-    font-size: 20px;
-    border-radius: 6px;
+    font-size: 22px;
+    border-radius: 30px;
     border-color: transparent;
     cursor: pointer;
-    height: 100%!important;
 }
 
 .button-banner:hover {
@@ -166,7 +164,6 @@ a {
     align-items: flex-start;
     flex-direction: column;
     color: #fff;
-    /* border-color: transparent; */
 }
 
 
@@ -174,7 +171,6 @@ a {
     padding: 0.75rem 1rem;
     display: block;
     transition: background-color 0.15s;
-    /* border-radius: 5px; */
     border-bottom: solid 1px #e7e7e7;
 }
 
@@ -185,7 +181,7 @@ a {
 .sidebar-title {
     display: flex;
     justify-content: space-between;
-    font-size: 1.2rem;
+    font-size: 20px;
 }
 
 /* .sidebar-title-plain {
@@ -224,7 +220,7 @@ a {
 }
 
 .sidebar-item.plain{
-    color: #fff;
+    /* color: #fff; */
     text-decoration: none;
 }
 
@@ -277,8 +273,8 @@ span.text-red {
 }
 
 .cart-icon {
-    font-size: 32px;
-    color: white;
+    font-size: 34px;
+    color: #393E46;
     cursor: pointer;
     position: relative;
     transition: transform .4s ease;
@@ -292,7 +288,7 @@ span.text-red {
 
 .cart-item-qty {
     position: absolute;
-    right: -8px;
+    right: -5px;
     font-size: 12px;
     color: #eee;
     background-color: #f02d34;
@@ -316,7 +312,7 @@ span.text-red {
     cursor: pointer;
     transform: scale(1, 1);
     transition: transform 0.5s ease;
-    color: #324d67;
+    color: #393E46;
 }
 
 .product-card:hover {
@@ -324,17 +320,15 @@ span.text-red {
 }
 
 .product-image {
-    border-radius: 15px;
-    /* background-color: #ebebeb; */
     transform: scale(1, 1);
     transition: transform 0.5s ease;
 }
 
 .product-name {
-    font-weight: 500;
+    font-weight: 700;
     text-align: center;
     margin-top: revert;
-    font-size: large;
+    font-size: 20px;
 }
 
 .product-price {
@@ -344,52 +338,10 @@ span.text-red {
 }
 
 .hero-banner-container {
-    /* padding: 100px 40px; */
-    /* background-color: #dcdcdc;
-    border-radius: 15px; */
     position: relative;
     height: 80vh;
     line-height: 0.9;
     width: 100%;
-    /* margin-bottom: 20vh; */
-}
-
-/* .hero-banner-container .beats-solo {
-    font-size: 20px;
-}
-
-.hero-banner-container button {
-    border-radius: 15px;
-    padding: 10px 16px;
-    background-color: #f02d34;
-    color: white;
-    border: none;
-    margin-top: 40px;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    z-index: 10000 !important;
-}
-
-.hero-banner-container h3 {
-    font-size: 4rem;
-    margin-top: 4px; */
-/* }
-
-.hero-banner-container h1 {
-    color: white;
-    font-size: 10em;
-    margin-left: -20px;
-    text-transform: uppercase;
-} */
-
-.hero-banner-image {
-    position: absolute;
-    top: 0%;
-    /* right: 20%;
-    width: 450px;
-    height: 450px; */
-    width: 100%
 }
 
 .desc {
@@ -413,7 +365,6 @@ span.text-red {
     margin-bottom: 12px;
     font-weight: 700;
     font-size: 16px;
-    /* color: black; */
     align-self: flex-end;
 }
 
@@ -438,10 +389,9 @@ span.text-red {
     font-weight: 200;
 }
 
-.footer-banner-container {
+/* .footer-banner-container {
     padding: 100px 40px;
     position: relative;
-    /* height: 400px; */
     line-height: 1;
     color: white;
     width: 100%;
@@ -461,7 +411,7 @@ span.text-red {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .header-banner-container {
     background-image: url('../assets/car-header-5.jpg');
@@ -603,30 +553,172 @@ span.text-red {
     position: relative;
 }
 
-.footer-container {
-    color: #324d67;
-    text-align: center;
-    margin-top: 20px;
-    padding: 30px 10px;
-    font-weight: 700;
+Footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #222;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 150px;
 }
 
-.footer-container .icons {
-    font-size: 30px;
+Footer .container {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+Footer .container .sec {
+    margin-right: 30px;
+}
+
+Footer .container .sec.aboutus {
+    width: 40%;
+}
+
+Footer .container h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+Footer .container h2:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f02d34;
+}
+
+Footer p {
+    color: #999;
+}
+
+
+.sci {
+    margin-top: 20px;
+    display: flex;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.sci li a:hover {
+    background: #f02d34;
+}
+
+.sci li a i {
+    color: #fff;
+    font-size: 24px;
+}
+
+.quickLinks {
+    position: relative;
+    width: 25%;
+}
+
+.quickLinks ul li a { 
+    list-style: none;
+}
+.quickLinks ul li a {
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.quickLinks ul li a:hover {
+    color: #fff;
+}
+
+.contact {
+    width: calc(35% - 60px);
+    margin-right: 0!important;
+}
+
+.contact .info {
+    position: relative;
+}
+
+.contact .info li {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.contact .info li span:nth-child(1){
+    color: #fff;
+    margin-right: 10px;
+}
+
+.contact .info li span {
+    color: #999;
+}
+
+.contact .info li a {
+    color: #999;
+    text-decoration: none;
+}
+
+.contact .info li a:hover {
+    color: #fff;
+}
+
+.copyrightText {
+    width: 100%;
+    background: #181818;
+    padding: 8px 100px;
+    text-align: center;
+    color: #999;
+    font-size: 18px
+}
+
+@media screen and (max-width: 991px) {
+    footer {
+        padding: 40px;
+    }
+    footer.container {
+        flex-direction: column;
+    }
+    footer .container .sec {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    footer .container .sec.aboutus,
+    .quickLinks,
+    .contact {
+        width: 100%;
+    }
+    .copyrightText {
+        padding: 8px 40px;
+    }
 }
 
 .cart-heading {
     display: flex;
     align-items: center;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
     cursor: pointer;
     gap: 2px;
     margin-left: 10px;
@@ -1597,10 +1689,10 @@ td {
     }
 
     .searchIcon {
-        color: white;
-        font-size: 27px;
+        color: #393E46;
+        font-size: 30px;
         margin-right: 10px;
-        margin-top: 6px;
+        /* margin-top: 3px; */
         vertical-align: middle
     }
     .searchBar-container:hover .closeIcon {

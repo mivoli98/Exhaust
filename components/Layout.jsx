@@ -16,10 +16,20 @@ const Layout = ({ children }) => {
       <main>
         {children}
       </main>
-        <FooterBanner />
+      {/* <FooterBanner /> */}
+      
       <footer>
+      {/* <div className="waves">
+        <div className="waves" id="wave1"></div>
+        <div className="waves" id="wave2"></div>
+        <div className="waves" id="wave2"></div>
+        <div className="waves" id="wave4"></div>
+    </div> */}
         <Footer />
       </footer>
+      <div class="copyrightText">
+        <p>Copyright @2022 WE Exhaust. All Rights Reserve.</p>
+      </div>
     </div>
   )
 }
