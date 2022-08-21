@@ -32,10 +32,12 @@ const HeroBanner = ({ heroBanner }) => {
           />
         </div>
       ))}
-        <div className="buttonText">
-          <h1>{name}</h1>
+        <div className={slideIndex != 1 ? "buttonTextSlide2" : "buttonText"}>
+          <h2>{name}</h2>
+          <span> <p>Bring your vehicle to a smooth and safe stop with </p> 
+          <p>top-quality exhaust components provided by WE Exhaust</p></span>
           <a href="/">
-          <button type="button" className="button-banner">{buttonText}</button>
+          <button type="button" className={slideIndex != 1 ? "buttonTextSlide2-banner" : "button-banner"}>{buttonText}</button>
           </a>
         </div>
 

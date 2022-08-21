@@ -9,7 +9,7 @@ const HeaderBanner = ({ headerBanner }) => {
   return (
     <div className="header-banner-container">
         <div className="title-container">
-            <h2 className="banner-title">{name}</h2>
+            <p className="banner-title">{name}</p>
             <div className="link-banner">
             <a href='/'>Home</a><i> <BsChevronRight /></i> <p>{name}</p>
             </div>     

@@ -87,7 +87,7 @@ const ShowExhaust = ({ exhaustDetails, exhaustAll, noModelTypeAll, searchQueryDa
               </div>
 
               <div className="maylike-products-wrapper">
-                <h2>You may also like</h2>
+                <h2>You May Also Like</h2>
                 <div className="marquee">
                   <div className="maylike-products-container track">  
                         {newExhaustAll.map((item) => (
