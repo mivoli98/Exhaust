@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
-import { TiDeleteOutline } from 'react-icons/ti';
-import toast from 'react-hot-toast';
+import { motion, AnimatePresence } from '../node_modules/framer-motion/dist/framer-motion';
 
 import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
@@ -10,9 +9,22 @@ import { urlFor } from '../lib/client';
 const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove } = useStateContext();
+
+
   return (
     <div className="cart-wrapper" ref={cartRef}>
-      <div className="cart-container">
+      <motion.div 
+        className="cart-container"
+        key="close-icon"
+        initial={{ width: 0 }}
+        animate={{ width: 600 }}
+        transition={{ type: "spring", bounce: 0, duration: 0.85 }}
+        exit={{
+                width: 0,
+                opacity: 0,
+                transition: { type: "spring", bounce: 0, duration: 0.85 }
+        }}
+        >
         <button
         type="button"
         className="cart-heading"
@@ -34,8 +46,11 @@ const Cart = () => {
         )}
         <div className="product-container">
           {cartItems.length >= 1 && cartItems.map((item) => (
+              
               <div className="product" key={item._id}>
+                  <a href={item.path}>
                   <img src={urlFor(item?.image[0])} className="cart-product-image"/>
+                  </a>
                   <div className="item-desc">
                     <div className="flex-top">
                       <h5 className="checkout-title">{item.name}</h5>
@@ -51,13 +66,12 @@ const Cart = () => {
                           </p>
                       </div>
                       <button type="button" className="remove-item" onClick={() => onRemove(item)}>
-                        <TiDeleteOutline />
+                        Remove
                       </button>
-
                     </div>
-
                   </div>
               </div>
+           
           ))}
 
         </div>
@@ -83,12 +97,10 @@ const Cart = () => {
               <button type="button" className="btn" onClick="">
                 CHECKOUT
               </button>
-
             </div>
-
           </div>
         )}
-      </div>
+        </motion.div>
     </div>
   )
 }

@@ -88,7 +88,7 @@ const SearchBar = ({ searchBarExhaust }) => {
         <AnimatePresence>
           {isExpanded && (
             <motion.span 
-            key="close-ion"
+            key="close-icon"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit= {{ opacity: 0 }}

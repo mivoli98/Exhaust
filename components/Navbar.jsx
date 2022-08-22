@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { AiOutlineShopping, AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineShopping } from 'react-icons/ai';
 import Cart from './Cart';
-import { HiMenuAlt4, HiX } from 'react-icons/hi';
-import { motion } from '../node_modules/framer-motion/dist/framer-motion';
+import { HiX } from 'react-icons/hi';
+import { motion, AnimatePresence } from '../node_modules/framer-motion/dist/framer-motion';
 import { useStateContext } from '../context/StateContext';
 import SideBar from './SideBar';
 import SearchBar from './SearchBar';
@@ -43,27 +43,37 @@ const Navbar = ({ searchExhaust }) => {
         <SearchBar searchBarExhaust={searchExhaust} />
         <button type="button" className="cart-icon" onClick={() => setShowCart(true)}>
         <AiOutlineShopping />
-        <span className="cart-item-qty">{totalQuantities}</span>
+        <span className={totalQuantities === 0 ? "cart-item-qty-if-0qty" : "cart-item-qty"}>{totalQuantities}</span>
       </button>
       </div>
 
 
-          {/* {search && <SearchBar />} */}
+      <AnimatePresence>
           
           {toggle &&  (          
-            // <motion.div className="motionDiv"
             
             <motion.div ref={parentRef} className="motionDiv" 
-              // whileInView={{ x: [300, 0] }}
-              transition={{ duration: 0.85, ease: 'easeOut'}}
+              initial={{ width: 0 }}
+              animate={{ width: 300 }}
+              transition={{ type: "spring", bounce: 0, duration: 0.85}}
+              
+              exit={{
+                width: 0,
+                opacity: 0,
+                transition: { type: "spring", bounce: 0, duration: 0.85 }
+              }}
+
               > 
               <HiX className="closeNav" onClick={() => setToggle(false)} />
                 <SideBar  />
 
             </motion.div>     
           )}
-       
-          {showCart && <Cart />}     
+
+       </AnimatePresence>
+       <AnimatePresence>
+          {showCart && <Cart />}   
+        </AnimatePresence>  
     </div>
   )
 }
