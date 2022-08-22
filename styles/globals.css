@@ -121,7 +121,7 @@ a {
 }
 
 .buttonTextSlide2-banner:hover {
-    transform: scale(1.1, 1.1);
+    transform: translateY(-20px)
 }
 
 .buttonTextSlide2-banner:active {
@@ -158,7 +158,7 @@ a {
 }
 
 .button-banner:hover {
-    transform: scale(1.1, 1.1);
+    transform: translateY(-20px)
 }
 .button-banner:active {
     transform: translateY(10px);
@@ -377,19 +377,27 @@ span.text-red {
     transition: transform 0.5s ease-out;
     color: #393E46;
     padding: 10px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    border-radius: 3.3333%/5.298%;
 
-    background: rgba(255,255,255,0.2);
+    /* background: rgba(255, 255, 255, 0.067); */
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-top: 1px solid rgba(255,255,255,0.5);
     border-left: 1px solid rgba(255,255,255,0.5);
     box-shadow: -10px -10px 15px rgba(255,255,255,0.5),
             10px 10px 15px rgba(70,70,70,0.12);
+
+
+    /* border-radius: 3.3333%/5.298%;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 24%); */
+            
+
 }
 
 .product-card:hover {
-    transform: scale(1.1, 1.1);
+    /* transform: scale(1.1, 1.1); */
+    transform: translateY(-20px);
 }
 
 .product-card:active {
@@ -922,7 +930,7 @@ Footer p {
 }
 
 .btn:hover {
-    transform: scale(1.1, 1.1);
+    transform: translateY(-20px)
 }
 
 .btn:active {
@@ -1108,7 +1116,7 @@ td {
 }
 
 .buttons .add-to-cart:hover {
-    transform: scale(1.1, 1.1)
+    transform: translateY(-20px)
 }
 
 .buttons .add-to-cart:active {
@@ -1133,7 +1141,7 @@ td {
 }
 
 .buttons .buy-now:hover {
-    transform: scale(1.1, 1.1)
+    transform: translateY(-20px)
 }
 
 .buttons .buy-now:active {
@@ -1556,16 +1564,13 @@ td {
   /*********************** MODEL PAGE ********************************** */
 
   .main-container-model {
-    /* padding-top: 35px; */
-    /* padding-bottom: 40px; */
     transition: transform 0.5s ease-out;
-    /* box-shadow: 3px 3px 13px 0 rgb(0 0 0 / 10%); */
     margin-bottom: 2rem;
     /* margin-top: 7rem; */
     padding: 17px;
     overflow-y: visible;
 
-    border-radius: 10px;
+    border-radius: 3.3333%/5.298%;
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-top: 1px solid rgba(255,255,255,0.5);
     border-left: 1px solid rgba(255,255,255,0.5);
@@ -1588,11 +1593,11 @@ td {
     transition: transform 0.5s ease;
     color: #324d67;
     border-style: none;
-    border-radius: 10px;
+    border-radius: 3.3333%/5.298%;
  }
 
  .main-container-model:hover {
-    transform: scale(1.1, 1.1)
+    transform: translateY(-20px)
 }
 
 .main-container-model:active {
