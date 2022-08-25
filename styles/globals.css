@@ -23,8 +23,7 @@ a {
 }
 
 .layout {
-    background-color: whitesmoke;
-
+    background-color: #F5F5F5;
 }
 
 
@@ -73,13 +72,14 @@ a {
 .Shop-btn:hover {
     background-color: white;
     border-radius: 25px;
-    box-shadow: 0 5 10px rgba(0,0,0,0.1);
+    border: 1px solid transparent;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 
 .buttonText {
     position: absolute;
     display: block;
-    top: 15rem;
+    top: 12rem;
     margin-left: 10rem;
     padding: 1rem 2rem;
 }
@@ -87,7 +87,7 @@ a {
 .buttonTextSlide2 {
     position: absolute;
     display: block;
-    top: 15rem;
+    top: 12rem;
     margin-left: 10rem;
     padding: 1rem 2rem;
 }
@@ -102,7 +102,7 @@ a {
 .buttonTextSlide2 p {
     color: #393E46;
     padding: 0.5rem;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .buttonTextSlide2-banner {
@@ -113,15 +113,20 @@ a {
     transition: all .35s ease-in-out;
     font-size: 22px;
     border-radius: 30px;
-    border-color:  #393E46;
     cursor: pointer;
     margin-top: 4rem;
-    box-shadow: 0 0 20px rgb(0, 0, 0, 0.25);
-    backdrop-filter: blur(4px);   
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-bottom: 2px solid grey;
+    border-right: 2px solid grey;
+    /* box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%); */
+    box-shadow: 0 0 20px rgb(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px); 
+    align-items: center;  
 }
 
 .buttonTextSlide2-banner:hover {
-    transform: translateY(-20px)
+    transform: translateY(-10px)
 }
 
 .buttonTextSlide2-banner:active {
@@ -132,14 +137,14 @@ a {
     font-weight: 700;
     font-size: 50px;
     margin-bottom: 3rem;
-    /* color: #393E46; */
-    color: white;
+    color: #393E46;
+    /* color: white; */
 }
 
 .buttonText p {
     color: white;
     padding: 0.5rem;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .button-banner {
@@ -155,10 +160,21 @@ a {
     margin-top: 4rem;
     box-shadow: 0 0 20px rgb(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);   
+    align-items: center;
+}
+
+.button-banner i {
+    margin-left: 0.5em;
+    margin-top: 0.25em;
+}
+
+.buttonTextSlide2 i {
+    margin-left: 0.5em;
+    margin-top: 0.25em;
 }
 
 .button-banner:hover {
-    transform: translateY(-20px)
+    transform: translateY(-10px)
 }
 .button-banner:active {
     transform: translateY(10px);
@@ -293,7 +309,7 @@ a {
 
 .marquee {
     position: relative;
-    height: 425px;
+    height: 510px;
     width: 100%;
     overflow-x: hidden;
     overflow-y: visible;
@@ -382,9 +398,9 @@ span.text-red {
 
     /* background: rgba(255, 255, 255, 0.067); */
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    /* border: 1px solid rgba(255, 255, 255, 0.25);
     border-top: 1px solid rgba(255,255,255,0.5);
-    border-left: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5); */
     box-shadow: -10px -10px 15px rgba(255,255,255,0.5),
             10px 10px 15px rgba(70,70,70,0.12);
 
@@ -402,12 +418,16 @@ span.text-red {
 
 .product-card:active {
     transform: translateY(10px);
+    box-shadow: 
+    inset -10px -10px 15px rgba(255, 255, 255, 0.5), 
+           inset 10px 10px 15px rgba(70, 70, 70, 0.12);
   }
 
 .product-image {
     transform: scale(1, 1);
     transition: transform 0.5s ease;
 }
+
 
 .product-name {
     font-weight: 700;
@@ -924,13 +944,15 @@ Footer p {
     cursor: pointer;
     transform: scale(1, 1);
     transition: transform 0.5s ease-out;
-    box-shadow: -10px -10px 15px rgba(255,255,255,0.5),
-            10px 10px 15px rgba(70,70,70,0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 
 }
 
 .btn:hover {
-    transform: translateY(-20px)
+    transform: translateY(-10px)
 }
 
 .btn:active {
@@ -1100,9 +1122,28 @@ td {
 
 .buttons .add-to-cart {
     padding: 10px 20px;
-    border: 1px solid #f02d34;
     margin-top: 40px;
     font-size: 18px;
+    font-weight: 500;
+    background-color: #393E46;
+    color: white;
+    cursor: pointer;
+    width: 200px;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+}
+
+.add-to-cart-fast {
+    display: inline-block;
+    width: 100%!important;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
     font-weight: 500;
     background-color: white;
     color: #f02d34;
@@ -1111,16 +1152,40 @@ td {
     transform: scale(1, 1);
     transition: transform 0.5s ease;
     border-radius: 32px;
-    box-shadow: -10px -10px 15px rgba(255,255,255,0.5),
-            10px 10px 15px rgba(70,70,70,0.12);
+    border: 1px solid #f02d34;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+}
+
+.main-container-model:hover .add-to-cart-fast, .add-to-cart-fast:hover  {
+    display: inline-block;
+    width: 100%!important;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #f02d34;
+    color: white;
+    cursor: pointer;
+    width: 200px;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+}
+
+.add-to-cart-fast:hover {
+    box-shadow: rgba(0,0,0,0.25);
 }
 
 .buttons .add-to-cart:hover {
-    transform: translateY(-20px)
+    transform: translateY(-10px)
 }
 
 .buttons .add-to-cart:active {
-    transform: translateY(10px)
+    transform: translateY(10px);
 }
 
 .buttons .buy-now {
@@ -1136,16 +1201,18 @@ td {
     transform: scale(1, 1);
     transition: transform 0.5s ease;
     border-radius: 32px;
-    box-shadow: -10px -10px 15px rgba(255,255,255,0.5),
-            10px 10px 15px rgba(70,70,70,0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 
 .buttons .buy-now:hover {
-    transform: translateY(-20px)
+    transform: translateY(-10px)
 }
 
 .buttons .buy-now:active {
-    transform: translateY(10px)
+    transform: translateY(10px);
 }
 
 .quantity-desc {
@@ -1601,7 +1668,9 @@ td {
 }
 
 .main-container-model:active {
-    transform: translateY(10px)
+    transform: translateY(10px);
+    box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5), 
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);;
 }
 
 .num-model {
@@ -1735,9 +1804,10 @@ td {
     height: 2.9em;
     background-color: #fff;
     border-radius: 32px;
-    box-shadow: 0px 2px 12px 3px rgba(0, 0, 0, 0.14);
     overflow: hidden;
     color: #bebebe;
+    box-shadow: 0 2px 8px 1px rgb(64 60 67 / 24%);
+    border-color: rgba(223,225,229,0);;
   }
 
   .searchBar-container:hover .searchIcon {

@@ -23,12 +23,12 @@ const Footer = () => {
       <div className="sec quickLinks">
         <h2>Quick Links</h2>
         <ul>
-            <li><a href="#">Lamborghini</a></li>
-            <li><a href="#">Ferrari</a></li>
-            <li><a href="#">Mercedes AMG</a></li>
-            <li><a href="#">Porsche</a></li>
-            <li><a href="#">Audi</a></li>
-            <li><a href="#">McLaren</a></li>
+            <li><a href="/product/LAMBORGHINI">Lamborghini</a></li>
+            <li><a href="/product/FERRARI">Ferrari</a></li>
+            <li><a href="/product/MERCEDES-AMG">Mercedes AMG</a></li>
+            <li><a href="/product/PORSCHE">Porsche</a></li>
+            <li><a href="/product/AUDI">Audi</a></li>
+            <li><a href="/product/MCLAREN">McLaren</a></li>
         </ul>
       </div>
 

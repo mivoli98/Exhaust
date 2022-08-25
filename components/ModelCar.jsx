@@ -10,6 +10,7 @@ const ModelCar = ({ newModel: {image, name, slug, numOfProducts, parentSlug} }) 
                 <div className="main-container-model" >
                      <div className="models-container" >
                         <img className="models-card"
+                            key={image._id}
                             src={urlFor(image)}
                             width={250}
                             height={250}

@@ -12,7 +12,7 @@ const ExhaustSlug = ({ exhaustDatas, searchQueryDatas }) => {
           {exhaustDatas?.map((exhaustData) => <HeaderBanner key={exhaustData._id} headerBanner={exhaustData} /> )}  
         </div>
       <div className="main-container">
-          <SortedPrice />
+          {/* <SortedPrice /> */}
           <div className="models-container">
             {newExhaustDatas?.map((newExhaustData) => <ExhaustCard key={newExhaustData._id} newExhaustData={newExhaustData} />)}
           </div>

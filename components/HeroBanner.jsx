@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import BtnSlider from './BtnSlider';
 import { urlFor } from '../lib/client';
+import { AiOutlineDoubleRight } from 'react-icons/ai'
 
 const HeroBanner = ({ heroBanner }) => {
   const { image, buttonText, name } = heroBanner;
@@ -24,7 +25,7 @@ const HeroBanner = ({ heroBanner }) => {
   return (
     <div className="hero-banner-container">
       {image?.map((item, index) => (
-        <div>
+        <div key={index} >
           <img 
             key={item._id}
             src={urlFor(item)}
@@ -37,7 +38,7 @@ const HeroBanner = ({ heroBanner }) => {
           <span> <p>Bring your vehicle to a smooth and safe stop with </p> 
           <p>top-quality exhaust components provided by WE Exhaust</p></span>
           <a href="/">
-          <button type="button" className={slideIndex != 1 ? "buttonTextSlide2-banner" : "button-banner"}>{buttonText}</button>
+          <button type="button" className={slideIndex != 1 ? "buttonTextSlide2-banner" : "button-banner"}>{buttonText} <i><AiOutlineDoubleRight /></i> </button>
           </a>
         </div>
 

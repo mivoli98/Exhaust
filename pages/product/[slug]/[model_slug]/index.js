@@ -1,8 +1,6 @@
 import React from 'react';
-import { client, urlFor } from "../../../../lib/client";
+import { client } from "../../../../lib/client";
 import { ModelType, ExhaustCard, HeaderBanner, Navbar } from '../../../../components';
-
-
 
 const ModelTypeIndex = ({ newModelTypes, newProductDetailDatas, modelTypeDatas, searchQueryDatas }) => {
   console.log('newModelTypes', modelTypeDatas)
