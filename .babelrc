@@ -6,4 +6,3 @@
     "presets": ["next/babel"],
     "plugins": []
   }
-
