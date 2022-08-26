@@ -7,7 +7,7 @@ const Home = ({ products, bannerDatas, searchQueryDatas }) => {
     <div>
       <Navbar searchExhaust={searchQueryDatas} />
      {bannerDatas?.map((bannerData) => <HeroBanner key={bannerData._id} heroBanner={bannerData} /> )} 
-     <div className="main-container">
+     <div className="main-container-mainPage">
       <div className="products-heading">
         <h2>Shop By Brands</h2>
       </div>
