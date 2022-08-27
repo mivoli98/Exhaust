@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { IoSearch, IoClose } from 'react-icons/io5';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from 'react-click-outside-hook';
-import MoonLoader from 'react-spinners/MoonLoader';
+// import MoonLoader from 'react-spinners/MoonLoader';
 import { urlFor, client } from '../lib/client';
 import  SearchDetail  from './SearchDetail';
 
@@ -106,7 +106,7 @@ const SearchBar = ({ searchBarExhaust }) => {
             <div className="search-Content">
             {isLoading && 
               <div className="loadingWrapper">
-                <MoonLoader loading color="#000" size={20} />
+                {/* <MoonLoader loading color="#000" size={20} /> */}
               </div> }
             {!isLoading && !isEmpty && <>
               {suggestions.map((suggestion) => (
