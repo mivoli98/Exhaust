@@ -8,10 +8,9 @@ const Footer = () => {
     <div className="container">
       <div className="sec aboutus">
         <h2>About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <p>WE exhaust has pioneered a variety of improvements in the design of performance exhaust systems and carbon fiber accessories. 
+          Every WE exhaust is made from T309 stainless steel and designed for extreme temperature applications,
+          employing mandrel-bent tubing, and hand-welded construction with the utmost care and professionalism.
         </p>
         <ul className="sci">
          <li><a href="#"><i><BsFacebook /></i></a></li>
@@ -47,7 +46,7 @@ const Footer = () => {
             </li>
             <li>
               <span><i><MdEmail/></i></span>
-              <p> <a hef="mailto:example@gmail.com">example@gmail.com</a></p>
+              <p> <a hef="mailto:example@gmail.com">WeExhaust@gmail.com</a></p>
             </li>
           </ul>
       </div>
